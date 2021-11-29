@@ -1,0 +1,47 @@
+.itune-primary-header{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(103,58,183,0.9476832969515931) 0%, rgba(121,9,74,1) 58%, rgba(86,67,126,1) 100%);
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+    .search-form{
+        min-width: 200px;
+        max-width: 500px;
+        width: 100%;
+    }
+}
+.grid-container{
+  
+    padding: 32px;
+    .album-card{
+        .mat-card-image{
+            margin-bottom: 0px;
+        }
+        .mat-card-content{
+            .album-name{
+                margin-bottom: 0px;
+            }
+            .artist-name{
+                font-size: 14px;
+                color: #777;
+            }
+        }
+    }
+    .blank-message{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .message{
+            font-size: 2em;
+            font-weight: 600;
+            color: #888;
+        }
+        .mat-icon{
+            font-size: 6em;
+            color: #888;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+<app-header></app-header>
+<header class="itune-primary-header">
+    <!-- <div class="search-bar-container">
+        
+        <input type="text" class="search-box" name= "search" [(ngModel)]= "search"/>
+        <button mat-fab color="primary" class="search-button" aria-label="Search by artist name">
+            <mat-icon>delete</mat-icon>
+          </button>
+    </div> -->
+    <form class="search-form">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Search by artist name</mat-label>
+            <input type="tel" matInput name="search" autocomplete="off" class="search-box" [(ngModel)]="search">
+            <mat-icon matSuffix class="search-icon">search</mat-icon>
+        </mat-form-field>
+    </form>
+</header>
+<main class="grid-container">
+    <!-- <div fxLayout="row wrap" fxLayoutGap="8px grid">
+        <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let tile of tiles">
+            <mat-card class="album-card">
+                
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <h4 class="album-name">Slumdog Millionaire</h4>
+                  <p class="artist-name">
+                    A R Rahman
+                  </p>
+                </mat-card-content>
+              </mat-card>
+        </div>
+    </div> -->
+    <div class="blank-message">
+        <p><mat-icon aria-hidden="false" aria-label="music">music_note</mat-icon></p>
+        <p class="message">Search itunes by artist name</p>
+    </div>
+    <div class="blank-message no-result">
+        <p><mat-icon aria-hidden="false" aria-label="music">search_off</mat-icon></p>
+        <p class="message">No albums found for this artist!</p>
+    </div>
+</main>
