@@ -1,6 +1,6 @@
 export const mockSearchData = {
     "resultCount": 7,
-    "result": [
+    "results": [
       {
         "wrapperType": "collection",
         "collectionType": "Album",
