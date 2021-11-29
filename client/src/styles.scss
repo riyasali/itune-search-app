@@ -7,8 +7,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
     .mat-form-field-flex{
         background-color: #f8f8f8 !important;
         color: #000 !important;
+        line-height: 2;
     }
     .search-icon{
         color: #000;
+        cursor: pointer;
     }
 }
