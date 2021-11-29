@@ -10,22 +10,40 @@
         min-width: 200px;
         max-width: 500px;
         width: 100%;
+        margin: 0px 12px;
+        .search-box{
+            color: #cd1495;
+            font-size: 18px;
+            font-weight: 600;
+        }
     }
 }
 .grid-container{
   
     padding: 32px;
     .album-card{
+        height: 220px;
         .mat-card-image{
             margin-bottom: 0px;
+            height: 160px;
+            min-width: 186px;
+            object-fit: fill;
         }
         .mat-card-content{
             .album-name{
-                margin-bottom: 0px;
+                margin-bottom: 6px;
+
             }
             .artist-name{
                 font-size: 14px;
                 color: #777;
+            }
+            .wrap{
+                text-overflow: ellipsis;
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                margin-bottom: 6px;
             }
         }
     }

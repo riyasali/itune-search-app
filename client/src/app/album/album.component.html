@@ -1,41 +1,38 @@
 <app-header></app-header>
 <header class="itune-primary-header">
-    <!-- <div class="search-bar-container">
-        
-        <input type="text" class="search-box" name= "search" [(ngModel)]= "search"/>
-        <button mat-fab color="primary" class="search-button" aria-label="Search by artist name">
-            <mat-icon>delete</mat-icon>
-          </button>
-    </div> -->
-    <form class="search-form">
+    <form class="search-form" (submit)="searchAlbums()" [formGroup]="form">
         <mat-form-field class="full-width" appearance="fill">
             <mat-label>Search by artist name</mat-label>
-            <input type="tel" matInput name="search" autocomplete="off" class="search-box" [(ngModel)]="search">
-            <mat-icon matSuffix class="search-icon">search</mat-icon>
+            <input type="tel" matInput required autocomplete="off" class="search-box" formControlName="searchTerm">
+            <mat-icon matSuffix class="search-icon" (click)="searchAlbums()">search</mat-icon>
         </mat-form-field>
     </form>
 </header>
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
 <main class="grid-container">
-    <!-- <div fxLayout="row wrap" fxLayoutGap="8px grid">
-        <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let tile of tiles">
-            <mat-card class="album-card">
+    <div>
+    <div fxLayout="row wrap" fxLayoutGap="8px grid">
+        <div fxFlex="18%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let album of albums">
+            <mat-card class="album-card" title="{{album.collectionName}}">
                 
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <img mat-card-image src="{{album.artworkUrl100}}" alt="image of album - {{album.collectionName}}">
                 <mat-card-content>
-                    <h4 class="album-name">Slumdog Millionaire</h4>
-                  <p class="artist-name">
-                    A R Rahman
+                    <h4 class="album-name wrap" title="{{album.collectionName}}">{{album.collectionName}}</h4>
+                  <p class="artist-name wrap" title="{{album.artistName}}">
+                   {{album.artistName}}
                   </p>
                 </mat-card-content>
               </mat-card>
         </div>
-    </div> -->
-    <div class="blank-message">
+    </div>
+    
+    <div class="blank-message" *ngIf="pristine">
         <p><mat-icon aria-hidden="false" aria-label="music">music_note</mat-icon></p>
-        <p class="message">Search itunes by artist name</p>
+        <p class="message default-message">Search itunes by artist name</p>
     </div>
-    <div class="blank-message no-result">
+    <div class="blank-message no-result" *ngIf="!pristine && noResult">
         <p><mat-icon aria-hidden="false" aria-label="music">search_off</mat-icon></p>
-        <p class="message">No albums found for this artist!</p>
+        <p class="message err-message">{{errorMsg}}</p>
     </div>
+    </div> 
 </main>
