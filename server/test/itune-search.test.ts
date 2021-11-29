@@ -13,7 +13,7 @@ describe("GET /itunes/search/:artist", () => {
             });
     });
     test("Search endpoint should return 400, if artist parameter is invalid", async () => {
-        await request(app).get("/itunes/search/232323")
+        await request(app).get("/itunes/search/^^^^")
             .expect(400)
             .then(async (response) => {
                 console.log(response.body);
