@@ -2,7 +2,7 @@
 <header class="itune-primary-header">
     <form class="search-form" (submit)="searchAlbums()" [formGroup]="form">
         <mat-form-field class="full-width" appearance="fill">
-            <mat-label>Search by artist name</mat-label>
+            <mat-label>Enter artist name</mat-label>
             <input type="tel" matInput required autocomplete="off" class="search-box" formControlName="searchTerm">
             <mat-icon matSuffix class="search-icon" (click)="searchAlbums()">search</mat-icon>
         </mat-form-field>
